@@ -1,2 +1,2 @@
-# goit-react-hw-03-phonebook
-Homework-03
+# goit-react-hw-02-phonebook
+Homework-02/2
