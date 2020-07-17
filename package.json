@@ -2,7 +2,7 @@
   "name": "goit-react-hw-03-phonebook",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://maxakozin.github.io/goit-react-hw-02-phonebook",
+  "homepage": "https://maxakozin.github.io/goit-react-hw-03-phonebook",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -41,11 +41,11 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MaxaKozin/goit-react-hw-02-feedback.git"
+    "url": "git+https://github.com/MaxaKozin/goit-react-hw-03-phonebook.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MaxaKozin/goit-react-hw-02-feedback/issues"
+    "url": "https://github.com/MaxaKozin/goit-react-hw-03-phonebook/issues"
   }
 }
