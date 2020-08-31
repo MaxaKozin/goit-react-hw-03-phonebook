@@ -1,17 +1,17 @@
 import React from 'react';
-import styles from './Phonebook.module.css';
 import PropTypes from 'prop-types';
+
+import s from './Phonebook.module.css';
 
 const Phonebook = ({ contacts, onDelete }) => {
   return (
 
-    <ul className={styles.list}>
+    <ul className={s.list}>
       {contacts.map(({ name, number, id }) => (
-        name && (<li className={styles.item} key={id}>
+        name && (<li className={s.item} key={id}>
           <span>{name} : {number}</span>
-          <button type="button" className={styles.close} onClick={() => onDelete(id)}>+</button>
+          <button type="button" className={s.close} onClick={() => onDelete(id)}>+</button>
         </li>)
-
       ))}
     </ul>
 

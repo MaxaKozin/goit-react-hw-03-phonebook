@@ -22,9 +22,9 @@ class App extends Component {
     }
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps, { contacts }) {
     const newContacts = this.state.contacts;
-    const prevContacts = prevState.contacts;
+    const prevContacts = contacts;
 
     if (newContacts !== prevContacts) {
       localStorage.setItem('contacts', JSON.stringify(newContacts));
@@ -55,7 +55,7 @@ class App extends Component {
 
   deleteContact = contactId => {
     this.setState(prevState => ({
-      contacts: prevState.contacts.filter(contact => contact.id !== contactId),
+      contacts: prevState.contacts.filter(({ id }) => id !== contactId),
     }));
   };
 
@@ -67,24 +67,21 @@ class App extends Component {
     const { filter, contacts } = this.state;
     const lowerCaseFilter = filter.toLowerCase();
 
-    return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(lowerCaseFilter),
+    return contacts.filter(({ name }) =>
+      name.toLowerCase().includes(lowerCaseFilter),
     );
   };
 
-  submitHandler = (event) => {
-    event.preventDefault();
-  }
-
   render() {
     const filteredContacts = this.getFilteredContacts();
+    const { filter } = this.state;
     return (
       <>
         <Container title='Phonebook'>
           <InputForm onSubmit={this.addContact} />
         </Container>
         <Container title='Contacts'>
-          <Filter value={this.state.filter} onChange={this.changeFilter} />
+          <Filter value={filter} onChange={this.changeFilter} />
           <Phonebook contacts={filteredContacts} onDelete={this.deleteContact} />
         </Container>
       </>
