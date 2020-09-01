@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import shortid from 'shortid';
+
 import InputForm from './components/InputForm/InputForm';
 import Filter from "./components/Filter/Filter";
 import Phonebook from './components/Phonebook/Phonebook';
@@ -38,7 +39,7 @@ class App extends Component {
       number
     };
     this.setState(({ contacts }) => {
-      const sameContact = contacts.find(contact => contact.name.toLowerCase() === name.toLowerCase());
+      const sameContact = contacts.some(contact => contact.name.toLowerCase() === name.toLowerCase());
 
       if (sameContact) {
         alert(`${name} is already exists!`);
